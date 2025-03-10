@@ -2,6 +2,34 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+</style>
+
+<button class="btn btn-primary" id="overlayBtn">Create</button>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay">
+
+    <!-- Card containing the create form. -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Create goes here.</h5>
+        </div>
+    </div>
+</div>
+
 <table class="table table-striped">
     <thead class="table-dark">
         <tr>
@@ -35,3 +63,18 @@
         </tr>
     </tbody>
 </table>
+
+<script>
+    const overlayBtn = document.getElementById('overlayBtn');
+    const overlay = document.getElementById('overlay');
+
+    overlayBtn.addEventListener('click', function () {
+        overlay.style.display = 'flex';
+    });
+
+    overlay.addEventListener('click', function (event) {
+        if (event.target === overlay) {
+            overlay.style.display = 'none';
+        }
+    });
+</script>

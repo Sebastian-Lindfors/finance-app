@@ -29,6 +29,12 @@ public class HomeController : Controller
         return View(vm);
     }
 
+    public IActionResult Create()
+    {
+        // Create logic for transactions goes here.
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
